@@ -1,122 +1,169 @@
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
-        }
-        
- body {
-            font-family: 'Microsoft YaHei', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        
-        header {
-            background-color: #1e63b0;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        nav {
-            background-color: #2a75d6;
-            padding: 10px 0;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 10px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            background-color: #1e63b0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        
-        .banner {
-			background-image: url('./1.jfif');
-			  background-size: cover;
-			  background-position: center;
-			  color: white; /* 文字颜色 */
-			  text-align: center;
-			 padding: 80px 20px; /* 调整内边距使文字居中 */
-			 
-			
-        } 
-		
-        
-        .content-section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .fraud-types {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .fraud-type {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid #1e63b0;
-            border-radius: 5px;
-        }
-        
-        footer {
-            background-color: #1e63b0;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
-        }
 
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; /* 盒子模型计算方式，宽度包含边框和内边距 */
+}
+
+
+
+/* 页面主体样式 */
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif; /* 字体设置，优先使用微软雅黑 */
+    line-height: 1.6; /* 行高为字体大小的1.6倍 */
+    color: #333; /* 文字颜色为深灰色 */
+    max-width: 800px; 
+    margin: 0 auto; */ /* 上下边距为0，左右自动(居中效果)
+    padding: 20px; /* 内边距20像素 */
+    background-color: #f5f5f5; /* 背景色为浅灰色 */
+}
+
+/* 页眉(顶部标题区)样式 */
+header {
+    background-color: #1e63b0; /* 背景色为蓝色 */
+    color: white; /* 文字颜色为白色 */
+    padding: 20px 0px; /* 上下内边距20px，左右0 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #2a75d6; /* 比页眉稍浅的蓝色 */
+    padding: 10px 0; /* 上下内边距10px */
+}
+
+/* 导航栏中的无序列表样式 */
+nav ul {
+    display: flex; /* 使用弹性布局(横向排列) */
+    justify-content: center; /* 内容水平居中 */
+    list-style: none; /* 去除列表前的圆点 */
+}
+
+/* 导航栏中的列表项样式 */
+nav ul li {
+    margin: 0 10px; /* 左右外边距10px */
+}
+
+/* 导航栏中的链接样式 */
+nav ul li a {
+    color: white; /* 文字颜色白色 */
+    text-decoration: none; /* 去除下划线 */
+    font-weight: bold; /* 文字加粗 */
+    padding: 5px 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角边框 */
+}
+
+/* 鼠标悬停在导航链接上的效果 */
+nav ul li a:hover {
+    background-color: #1e63b0; /* 背景色变深 */
+}
+
+/* 主要内容容器样式 */
+.container {
+    max-width: 1200px; /* 最大宽度 */
+    margin: 20px auto; /* 上下边距20px，左右自动(居中) */
+    padding: 0 20px; /* 左右内边距20px */
+}
+
+/* 横幅区域样式 */
+.banner {
+    background-image: url('./1.jfif'); /* 背景图片 */
+    background-size: cover; /* 背景图片覆盖整个区域 */
+    background-position: center; /* 背景图片居中显示 */
+    color: white; /* 文字颜色白色 */
+    text-align: center; /* 文字居中 */
+    padding: 80px 20px; /* 上下内边距80px，左右20px */
+}
+
+/* 内容区域样式 */
+.content-section {
+    background-color: white; /* 白色背景 */
+    padding: 20px; /* 内边距20px */
+    margin-bottom: 20px; /* 下外边距20px */
+    border-radius: 5px; /* 圆角边框 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影效果 */
+}
+
+/* 诈骗类型网格布局 */
+.fraud-types {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(3, 1fr); /* 3列等宽 */
+    gap: 15px; /* 网格间距15px */
+    margin-top: 20px; /* 上外边距20px */
+}
+
+/* 单个诈骗类型样式 */
+.fraud-type {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    padding: 15px; /* 内边距15px */
+    border-left: 4px solid #1e63b0; /* 左侧蓝色边框 */
+    border-radius: 5px; /* 圆角边框 */
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #1e63b0; /* 蓝色背景 */
+    color: white; /* 白色文字 */
+    text-align: center; /* 文字居中 */
+    padding: 20px 0; /* 上下内边距20px */
+    margin-top: 20px; /* 上外边距20px */
+}
+
+/* 警告提示样式 */
 .warning {
-    /* 文字样式 */
-    color: #666;          /* 灰色文字 */
-    font-size: 14px;      /* 小字 */
-    text-align: center;   /* 水平居中 */
+    color: #666; /* 灰色文字 */
+    font-size: 14px; /* 较小字号 */
+    text-align: center; /* 文字居中 */
     
-    /* 容器样式 */
-    background-color: #f5f5f5;  /* 浅灰背景 */
-    padding: 12px;        /* 内边距 */
-    border-radius: 4px;   /* 圆角 */
-    max-width: 600px;     /* 最大宽度 */
-    margin: 0 auto;       /* 水平居中 */
-	
-	 /* 固定定位 */
-	    position: fixed;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
-	    margin: 0 auto;
-	    max-width: 100%;
-  }
-        
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    padding: 12px; /* 内边距12px */
+    border-radius: 4px; /* 小圆角 */
+    max-width: 600px; /* 最大宽度600px */
+    margin: 0 auto; /* 水平居中 */
+    
+    position: fixed; /* 固定定位 */
+    bottom: 0; /* 固定在底部 */
+    left: 0; /* 左边缘对齐 */
+    right: 0; /* 右边缘对齐 */
+    max-width: 100%; /* 最大宽度100% */
+}
+
+.right{
+	position: fixed; /* 固定定位 */
+	            right: 0;          /* 紧贴右侧 */
+	            top: 200px;         /* 距离顶部20px */
+	            width: 250px;      /* 宽度 */
+				height: 200px;    /* 高度 */
+	            background: #fff;  /* 背景色 */
+	            border: 1px solid #000000; /* 边框 */
+	            padding: 15px;     /* 内边距 */
+
+}
+
+.left{
+	position: fixed; /* 固定定位 */
+	            left: 0;          /* 紧贴左侧 */
+	            top: 200px;         /* 距离顶部20px */
+	            width: 250px;      /* 宽度 */
+				height: 200px;    /* 高度 */
+	            background: #fff;  /* 背景色 */
+	            border: 1px solid #000000; /* 边框 */
+	            padding: 15px;     /* 内边距 */
+
+}
+.bottom{
+	   margin: 0 auto; /* 水平居中 */
+	position: fixed; /* 固定定位 */
+	            top: 700px;         /* 距离顶部20px */
+	            width: 850px;      /* 宽度 */
+				height: 200px;    /* 高度 */
+	            background: #fff;  /* 背景色 */
+	            border: 1px solid #000000; /* 边框 */
+	            padding: 15px;     /* 内边距 */
+				left: 0; /* 左边缘对齐 */
+				right: 0; /* 右边缘对齐 */
+}
+
+
+
+
