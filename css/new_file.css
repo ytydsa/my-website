@@ -1,0 +1,319 @@
+/* 全局样式重置 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* body 样式 ==================================================*/
+body {
+	font-family: 'Microsoft YaHei', Arial, sans-serif;
+	line-height: 1.6;
+	color: #333;
+	margin: 0 auto;
+	padding: 0px;
+	background-color: #f5f5f5;
+}
+
+/* header 样式 ==============================================*/
+header {
+	width: 100%;
+	background-color: #1e63b0;
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+}
+
+/* nav 样式 ====================================================*/
+nav {
+	width: 100%;
+	background-color: #2a75d6;
+	padding: 3px 0;
+	margin: 0px;
+}
+
+/* nav 下的 ul 样式 */
+nav ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+}
+
+/* nav 下的 li 样式 */
+nav ul li {
+	margin: 0 20px;
+	/* 增大左右间距 */
+	position: relative;
+	/* 为分隔线定位做准备 */
+}
+
+/* 非最后一个 li 元素的伪元素样式，用于添加分隔线 */
+nav ul li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	right: -15px;
+	/* 根据 margin 调整位置 */
+	top: 50%;
+	transform: translateY(-50%);
+	height: 60%;
+	/* 控制分隔线高度 */
+	width: 1px;
+	background-color: rgba(255, 255, 255, 0.3);
+	/* 半透明白色 */
+}
+
+/* nav 下的 li 中 a 元素样式 */
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 8px 15px;
+	/* 增大内边距 */
+	border-radius: 5px;
+	transition: all 0.3s;
+	display: block;
+	/* 保证点击区域 */
+}
+
+/* nav 下的 li 中 a 元素鼠标悬停样式 */
+nav ul li a:hover {
+	background-color: #1e63b0;
+	transform: translateY(-2px);
+	/* 添加悬停微动效 */
+}
+
+/* container 样式 ===============================================*/
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 20px 40px;
+	/* 上为 0，左右为 20px，下为 40px */
+	border: 1px solid #ccc;
+	/* 添加 1 像素宽的浅灰色边框 */
+	border-top-left-radius: 0;
+	/* 顶部左上角无圆角 */
+	border-top-right-radius: 0;
+	/* 顶部右上角无圆角 */
+	border-bottom-left-radius: 8px;
+	/* 底部左下角圆角为 8px */
+	border-bottom-right-radius: 8px;
+	/* 底部右下角圆角为 8px */
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	/* 添加大的淡阴影 */
+}
+
+/* banner 样式 ================================================*/
+.banner {
+	background-image: url('../img/lang.jpg');
+	background-size: cover;
+	background-position: center;
+	color: white;
+	/* 文字颜色 */
+	text-align: center;
+	padding: 80px 20px;
+	max-width: 900px;
+	margin: 0 auto;
+	/* 调整内边距使文字居中 */
+	height: 300px;
+}
+
+/* 左侧边栏样式 ==============================================*/
+.left-sidebar {
+	float: left;
+	width: 300px;
+	padding: 20px;
+	margin-right: 0px;
+}
+
+.user-profile {
+	background: #e9e9e9;
+	padding: 20px;
+	padding-bottom: 30px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.user-avatar {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.user-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.user-name {
+	margin: 0 0 10px 0;
+	font-size: 18px;
+}
+
+.user-article-count,
+.user-site-duration,
+.user-qq-email {
+	color: #666;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+/* 右侧边栏样式 ======================================================*/
+.right-sidebar {
+	float: right;
+	width: 300px;
+	/* 可根据需求调整宽度 */
+	padding: 20px;
+	margin-left: 0px;
+	/* 与中间内容留出间距 */
+}
+
+.rank-container {
+	background-color: #e9e9e9;
+	padding: 18px;
+	border-radius: 12px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	max-width: 320px;
+}
+
+.rank-container h3 {
+	margin-top: 0;
+	font-size: 22px;
+	color: #2c3e50;
+	border-bottom: 2px solid transparent;
+	/* 初始设为透明 */
+	padding-bottom: 10px;
+	transition: border-bottom 0.3s ease;
+	/* 添加过渡动画 */
+}
+
+.rank-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	padding: 10px;
+	transition: transform 0.2s;
+}
+
+.rank-item:hover p {
+	cursor: pointer;
+	color: #3498db;
+	transform: scale(1.2);
+	transition: color 0.3s, transform 0.2s;
+}
+
+.rank-number {
+	width: 28px;
+	height: 28px;
+	background-color: #3498db;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin-right: 15px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/* 主内容区域样式，确保浮动布局============================================= */
+main {
+	float: left;
+	width: calc(100% - 300px - 300px);
+	/* 重新计算宽度 */
+	padding: 0px;
+}
+
+/* content-section 样式 =============================================*/
+.content-section {
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* fraud-types =============================================样式 */
+.fraud-types {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+	margin-top: 20px;
+}
+
+/* fraud-type 样式 */
+.fraud-type {
+	background-color: #f8f9fa;
+	/* 初始浅灰背景 */
+	padding: 15px 20px;
+	/* 增加内边距，内容更舒展 */
+	border-left: 4px solid #1e63b0;
+	/* 左侧蓝色条 */
+	border-radius: 8px;
+	/* 圆角更柔和 */
+	color: #333;
+	/* 初始深灰文字 */
+	transition: background-color 0.3s ease, color 0.3s ease;
+	/* 仅过渡背景和文字颜色 */
+	cursor: pointer;
+}
+
+/* 悬停时全蓝背景+白色文字 */
+.fraud-type:hover {
+	background-color: #1e63b0;
+	/* 主蓝色背景（与左侧条同色） */
+	color: white;
+	/* 白色文字 */
+	box-shadow: 0 6px 18px rgba(30, 99, 176, 0.2);
+	/* 更强的阴影，增强立体感 */
+	transform: scale(1.03) translateY(-3px);
+	/* 放大+上浮，视觉上更突出 */
+}
+
+/* footer 样式  =============================================*/
+footer {
+	background-color: #1e63b0;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+	margin-top: 20px;
+}
+
+/* warning 样式  =============================================*/
+.warning {
+	/* 文字样式 */
+	color: #666;
+	/* 灰色文字 */
+	font-size: 14px;
+	/* 小字 */
+	text-align: center;
+	/* 水平居中 */
+	/* 容器样式 */
+	background-color: #f5f5f5;
+	/* 浅灰背景 */
+	padding: 12px;
+	/* 内边距 */
+	border-radius: 4px;
+	/* 圆角 */
+	max-width: 600px;
+	/* 最大宽度 */
+	margin: 0 auto;
+	/* 水平居中 */
+	/* 固定定位 */
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+a{
+	text-decoration: none;
+}

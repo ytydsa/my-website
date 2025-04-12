@@ -1,0 +1,23 @@
+#d1{
+	width: 1024px;
+	border: 1px blue solid;
+	padding: 10px;
+}
+
+.a1{
+	color:red;
+}
+
+.a2{
+	color:blue;
+	font-size: 20px;
+	float: left;
+}
+
+p{
+	text-align: left;
+}
+
+.clear{
+	clear: both;
+}

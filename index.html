@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 让网页在手机等移动设备上也能正常显示 -->
-    <title>网络安全</title>
-    <!-- 网页标题，会显示在浏览器标签页上 -->
-    <!-- 外联CSS样式表 -->
-    <link rel="stylesheet" href="./style.css">
-    <!-- 引用当前目录下的style.css文件来设置网页样式 -->
-    <link rel="icon" href="favicon.ico">
-    <!-- 设置网站的小图标，显示在浏览器标签页上 -->
-</head>
-<body>
-    <header>
-        <h1>网络安全中心</h1>
-    </header>
-    <nav>
-        <!-- 导航栏区域 -->
-        <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="./internet fraud.html">诈骗案例</a></li>
-            <li><a href="./avoid fraud.html">防骗技巧</a></li>
-            <li><a href="./informant center.html">举报中心</a></li>
-        </ul>
-    </nav>
-    <!--主要内容区域 -->
-    <div class="banner">
-        <h2>提及转账就是诈骗</h2>
-        <p>预警如阻别忽视，财产安全要重视</p>
-    </div>
-    <div class="content-section">
-
-        <!-- 内容区域 -->
-        <h2>常见的诈骗分类：</h2>
-        <!-- 内容小标题 -->
-        <p>2024手机诈骗等级类型分布</p>
-        
-        <div class="fraud-types">
-            <!-- 诈骗类型展示区域 -->
-            <!-- 下面是9种诈骗类型的展示，每个都是一个div盒子 -->
-            <div class="fraud-type">1.银行诈骗</div>
-            <div class="fraud-type">2.理财诈骗</div>
-            <div class="fraud-type">3.电信诈骗</div>
-            <div class="fraud-type">4.投资诈骗</div>
-            <div class="fraud-type">5.健康诈骗</div>
-            <div class="fraud-type">6.经营诈骗</div>
-            <div class="fraud-type">7.公安诈骗</div>
-            <div class="fraud-type">8.保险诈骗</div>
-            <div class="fraud-type">9.邮件诈骗</div>
-        </div>
-		<!-- 右侧 -->
-		<div class="right">              
-			
-		</div>
-		<!-- 左侧 -->
-		<div class="left">
-			
-		</div>
-		<!-- 底部 -->
-		<div class="bottom">
-			
-		</div>
-		
-        
-        <div class="warning">
-            <!-- 警告提示区域 -->
-            增强网络安全意识，提升防范诈骗能力
-            <!-- 提示文本 -->
-        </div>
-
-    </div>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>网络安全中心</title>
+		<!-- 外联CSS -->
+		<link rel="stylesheet" href="css/new_file.css">
+		<link rel="icon" href="favicon.ico">
+	</head>
+	<body>
+		<header>
+			<h1>网络安全中心</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="./internet fraud.html">诈骗案例</a></li>
+				<li><a href="./avoid fraud.html">防骗技巧</a></li>
+				<li><a href="./informant center.html">举报中心</a></li>
+				<li><a href="#">提交文章</a></li>
+				<li><a href="#">个人信息</a></li>
+			</ul>
+		</nav>
+		<aside class="left-sidebar">
+			<div class="user-profile">
+				<img src="img/touxiaing.jpg" alt="用户头像" class="user-avatar">
+				<div class="user-info">
+					<h3 class="user-name">网安小卫士</h3>
+					<p class="user-article-count">发布文章数量：88 篇</p>
+					<p class="user-site-duration">在站时长：3 年</p>
+					<p class="user-qq-email">QQ 邮箱：123456789@qq.com</p>
+				</div>
+			</div>
+		</aside>
+		<main>
+			<div class="banner">
+				<h1>提及转账就是诈骗</h1>
+				<h2>预警如阻别忽视，财产安全要重视</h2>
+			</div>
+			<div class="container">
+				<h2>常见的诈骗分类：</h2>
+				<p>2024常见诈骗等级类型分布</p>-
+				<div class="fraud-types">
+					<a href="银行诈骗.html"><div class="fraud-type">1. 银行诈骗</div></a>
+					<a href="理财诈骗.html"><div class="fraud-type">2. 理财诈骗</div></a>
+					<a href="电信诈骗.html"><div class="fraud-type">3. 电信诈骗</div></a>
+					<a href="虚假投资理财诈骗.html"><div class="fraud-type">4. 虚假投资理财诈骗</div></a> <!-- 原投资诈骗，与排行榜表述对齐 -->
+					<a href="健康诈骗.html"><div class="fraud-type">5. 健康诈骗</div></a> 
+					<a href="经营诈骗.html"><div class="fraud-type">6. 经营诈骗</div></a>
+					<a href="冒充公检法诈骗.html"><div class="fraud-type">7. 冒充公检法诈骗</div></a> <!-- 原公安诈骗，更准确规范 -->
+					<a href="保险诈骗.html"><div class="fraud-type">8. 保险诈骗</div></a>
+					<a href="网络钓鱼诈骗.html"><div class="fraud-type">9. 网络钓鱼诈骗</div></a> <!-- 补充排行榜有的类型 -->
+				</div>
+				<div class="warning">
+					增强网络安全意识，提升防范诈骗能力
+				</div>
+			</div>
+		</main>
+		<aside class="right-sidebar">
+			<div class="rank-container">
+				<h3>全国网络安全案件排行榜</h3>
+				<div class="rank-item"><span class="rank-number">1</span>
+					<p>中奖诈骗</p>
+				</div>
+				<div class="rank-item"><span class="rank-number">2</span>
+					<p>网络赌博</p>
+				</div>
+				<div class="rank-item"><span class="rank-number">3</span>
+					<p>网络钓鱼诈骗</p>
+				</div>
+				<div class="rank-item"><span class="rank-number">4</span>
+					<p>虚假投资理财诈骗</p>
+				</div>
+				<div class="rank-item"><span class="rank-number">5</span>
+					<p>冒充公检法诈骗</p>
+				</div>
+			</div>
+		</aside>
+	</body>
 </html>
