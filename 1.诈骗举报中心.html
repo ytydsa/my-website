@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>诈骗举报中心</title>
+		<script>
+			function 提交成功() {
+				alert("提交成功！"); // 弹出提示框
+			}
+		</script>
+		<style>
+			/* 全局样式 */
+			body {
+				font-family: 'Microsoft YaHei', Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				max-width: 950px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #f5f5f5;
+			}
+
+			/* nav 样式，设置导航栏背景颜色、内边距、最大宽度并居中 */
+			nav {
+				background-color: #2a75d6;
+				padding: 3px 0;
+				margin: 0;
+				max-width: 950px;
+				margin: 0 auto;
+			}
+
+			/* nav 下的 ul 样式，使用 flex 布局并去除列表默认样式 */
+			nav ul {
+				display: flex;
+				justify-content: center;
+				list-style: none;
+				padding: 0;
+			}
+
+			/* nav 下的 li 样式，设置左右间距和相对定位 */
+			nav ul li {
+				margin: 0 20px;
+				position: relative;
+			}
+
+			/* 非最后一个 li 元素的伪元素样式，添加分隔线 */
+			nav ul li:not(:last-child)::after {
+				content: "";
+				position: absolute;
+				right: -15px;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 80%;
+				width: 1px;
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			/* nav 下的 li 中 a 元素样式，设置文字颜色、去除下划线、加粗、内边距、圆角和过渡效果 */
+			nav ul li a {
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+				padding: 8px 20px;
+				border-radius: 5px;
+				transition: all 0.3s;
+				display: block;
+			}
+
+			/* nav 下的 li 中 a 元素鼠标悬停样式，改变背景颜色并添加微动效 */
+			nav ul li a:hover {
+				background-color: #1e63b0;
+				transform: translateY(-2px);
+			}
+
+
+
+
+			/* 标题 */
+			h1 {
+				text-align: center;
+				color: #2a75d6;
+				margin-bottom: 30px;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #2a75d6;
+			}
+
+			/* 表单容器 */
+			.report-form {
+				background-color: white;
+				padding: 25px;
+				border-radius: 8px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+
+			/* 表单元素样式 */
+			.form-group {
+				margin-bottom: 20px;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 8px;
+				font-weight: bold;
+			}
+
+			select,
+			input[type="text"],
+			input[type="email"],
+			input[type="date"],
+			textarea {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				font-size: 16px;
+				font-family: inherit;
+			}
+
+			textarea {
+				height: 120px;
+				resize: vertical;
+			}
+
+			/* 按钮样式 */
+			.form-actions {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+				margin-top: 30px;
+			}
+
+			.btn {
+				padding: 10px 25px;
+				border: none;
+				border-radius: 4px;
+				font-size: 16px;
+				cursor: pointer;
+			}
+
+			.btn-reset {
+				background-color: #f0f0f0;
+				color: #333;
+			}
+
+			.btn-submit {
+				background-color: #2a75d6;
+				color: white;
+			}
+
+
+
+
+
+
+			/* 填写须知 */
+			.notice {
+				margin-top: 40px;
+				padding: 15px;
+				background-color: #f8f9fa;
+				border-left: 4px solid #2a75d6;
+			}
+
+			.notice h3 {
+				margin-top: 0;
+				color: #2a75d6;
+			}
+
+			/* 必填项标记 */
+			.required:after {
+				content: " *";
+				color: #d9534f;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<nav>
+			<ul>
+				<li><a href="./1.index.html">首页</a></li>
+				<li><a href="./1.七大诈骗案例.html">诈骗案例</a></li>
+				<li><a href="./1.七大防骗技巧.html">防骗技巧</a></li>
+				<li><a href="./1.诈骗举报中心.html">举报中心</a></li>
+				<li><a href="./1.提交文章.html">提交文章</a></li>
+				<li><a href="./1.个人信息.html">个人信息</a></li>
+			</ul>
+		</nav>
+		<h1>举报</h1>
+
+		<form class="report-form">
+			<!-- 类型选择 -->
+			<div class="form-group">
+				<label for="type" class="required">类型：</label>
+				<select id="type" required>
+					<option value="">-- 请选择举报类型 --</option>
+					<option value="bank">银行诈骗</option>
+					<option value="online">理财诈骗</option>
+					<option value="phone">电信诈骗</option>
+					<option value="investment">投资诈骗</option>
+					<option value="investment">健康诈骗</option>
+					<option value="investment">经营诈骗</option>
+					<option value="investment">公安诈骗</option>
+					<option value="investment">保险诈骗</option>
+					<option value="investment">邮件诈骗</option>
+				</select>
+			</div>
+
+			<!-- 网址/电话 -->
+			<div class="form-group">
+				<label for="contact">网址或电话号码：</label>
+				<input type="text" id="contact">
+			</div>
+
+			<!-- 举报理由 -->
+			<div class="form-group">
+				<label for="reason" class="required">详细填写举报理由，有利于审核，不少于10个字。</label>
+				<textarea id="reason" required minlength="10"></textarea>
+			</div>
+
+			<!-- 邮箱 -->
+			<div class="form-group">
+				<label for="email" class="required">邮箱地址：</label>
+				<input type="email" id="email" required>
+			</div>
+
+			<!-- 时间 -->
+			<div class="form-group">
+				<label for="date" class="required">时间：</label>
+				<input type="date" id="date" required placeholder="yyyy/mm/dd">
+			</div>
+
+			<div class="form-actions">
+				<button type="reset" class="btn btn-reset">重置</button>
+				<button type="submit" class="btn btn-submit" onclick="提交成功()">提交</button>
+
+			</div>
+		</form>
+
+		<!-- 填写须知 -->
+		<div class="notice">
+			<h3>填写须知：</h3>
+			<p>1. 举报事由：请详细描述您对被举报人的诈骗行为的了解，包括具体的时间、地点、涉及的金数和其他相关细节。</p>
+			<p>2. 提供证据：如果您有相关的证据材料，如截图、录音、合同等，请将其上传或提供给相关部门进行调查。</p>
+		</div>
+
+	</body>
+</html>

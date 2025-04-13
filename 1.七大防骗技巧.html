@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>七大防骗技巧</title>
+		<style>
+			/* 全局样式 */
+			body {
+				font-family: 'Microsoft YaHei', Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				max-width: 950px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #f9f9f9;
+			}
+
+
+			/* nav 样式，设置导航栏背景颜色、内边距、最大宽度并居中 */
+			nav {
+				background-color: #2a75d6;
+				padding: 3px 0;
+				margin: 0;
+				max-width: 950px;
+				margin: 0 auto;
+			}
+
+			/* nav 下的 ul 样式，使用 flex 布局并去除列表默认样式 */
+			nav ul {
+				display: flex;
+				justify-content: center;
+				list-style: none;
+				padding: 0;
+			}
+
+			/* nav 下的 li 样式，设置左右间距和相对定位 */
+			nav ul li {
+				margin: 0 20px;
+				position: relative;
+			}
+
+			/* 非最后一个 li 元素的伪元素样式，添加分隔线 */
+			nav ul li:not(:last-child)::after {
+				content: "";
+				position: absolute;
+				right: -15px;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 80%;
+				width: 1px;
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			/* nav 下的 li 中 a 元素样式，设置文字颜色、去除下划线、加粗、内边距、圆角和过渡效果 */
+			nav ul li a {
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+				padding: 8px 20px;
+				border-radius: 5px;
+				transition: all 0.3s;
+				display: block;
+			}
+
+			/* nav 下的 li 中 a 元素鼠标悬停样式，改变背景颜色并添加微动效 */
+			nav ul li a:hover {
+				background-color: #1e63b0;
+				transform: translateY(-2px);
+			}
+
+			/* 标题 */
+			h1 {
+				text-align: center;
+				color: #1e63b0;
+				margin-bottom: 30px;
+			}
+
+			/* 技巧列表 */
+			.tips-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: center;
+			}
+
+			.tip-item {
+				background-color: white;
+				width: 100%;
+				max-width: 350px;
+				padding: 25px;
+				border-radius: 8px;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+				position: relative;
+			}
+
+			.tip-number {
+				position: absolute;
+				top: -15px;
+				left: -15px;
+				background-color: #1e63b0;
+				color: white;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 20px;
+				font-weight: bold;
+			}
+
+			.tip-content {
+				margin-top: 15px;
+			}
+
+			/* 底部链接 */
+			.home-link {
+				display: block;
+				text-align: center;
+				margin-top: 40px;
+				color: #1e63b0;
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			.home-link:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<nav>
+			<ul>
+				<li><a href="./1.index.html">首页</a></li>
+				<li><a href="./1.七大诈骗案例.html">诈骗案例</a></li>
+				<li><a href="./1.七大防骗技巧.html">防骗技巧</a></li>
+				<li><a href="./1.诈骗举报中心.html">举报中心</a></li>
+				<li><a href="./1.提交文章.html">提交文章</a></li>
+				<li><a href="./1.个人信息.html">个人信息</a></li>
+			</ul>
+		</nav>
+
+		<!-- 主要内容 -->
+		<h1>以下是七大防骗技巧，帮助您避免成为骗局的受害者：</h1>
+
+		<div class="tips-container">
+			<!-- 技巧1 -->
+			<div class="tip-item">
+				<div class="tip-number">01</div>
+				<div class="tip-content">
+					<h3>怀疑并验证：</h3>
+					<p>通过独立的渠道与相关人员验证信息的真实性。</p>
+				</div>
+			</div>
+
+			<!-- 技巧2 -->
+			<div class="tip-item">
+				<div class="tip-number">02</div>
+				<div class="tip-content">
+					<h3>保持冷静：</h3>
+					<p>不要被情绪左右，保持冷静思考，并避免草率行事。</p>
+				</div>
+			</div>
+
+			<!-- 技巧3 -->
+			<div class="tip-item">
+				<div class="tip-number">03</div>
+				<div class="tip-content">
+					<h3>注意信息保护：</h3>
+					<p>不要随意在不可信的网站上使用个人敏感信息。</p>
+				</div>
+			</div>
+
+			<!-- 技巧4 -->
+			<div class="tip-item">
+				<div class="tip-number">04</div>
+				<div class="tip-content">
+					<h3>警惕不明来电：</h3>
+					<p>不要透露个人信息，不要轻易相信陌生人的诱骗。</p>
+				</div>
+			</div>
+
+			<!-- 技巧5 -->
+			<div class="tip-item">
+				<div class="tip-number">05</div>
+				<div class="tip-content">
+					<h3>谨慎处理链接和附件：</h3>
+					<p>不要点击或下载来自不明来源的链接和附件。</p>
+				</div>
+			</div>
+
+			<!-- 技巧6 -->
+			<div class="tip-item">
+				<div class="tip-number">06</div>
+				<div class="tip-content">
+					<h3>更新安全软件：</h3>
+					<p>确保您的设备上安装了最新的防病毒和防骗软件版本。</p>
+				</div>
+			</div>
+
+			<!-- 技巧7 -->
+			<div class="tip-item">
+				<div class="tip-number">07</div>
+				<div class="tip-content">
+					<h3>保持警惕和学习：</h3>
+					<p>定期了解不同类型的诈骗手段，增强自我防骗意识。</p>
+				</div>
+			</div>
+		</div>
+		<a href="./1.index.html" class="home-link">回到首页</a>
+	</body>
+</html>

@@ -1,0 +1,224 @@
+/* 全局样式重置，设置内外边距为 0，使用标准盒模型，设置默认字体 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* body 样式，设置字体、行高、文字颜色、背景颜色等 */
+body {
+	font-family: 'Microsoft YaHei', Arial, sans-serif;
+	line-height: 1.6;
+	color: #333;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #f5f5f5;
+	 overflow: auto;
+}
+
+/* header 样式，设置最大宽度、背景颜色、文字颜色、内边距和文本对齐方式 */
+header {
+	max-width: 950px;
+	background-color: #1e63b0;
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* nav 样式，设置导航栏背景颜色、内边距、最大宽度并居中 */
+nav {
+	background-color: #2a75d6;
+	padding: 3px 0;
+	margin: 0;
+	max-width: 950px;
+	margin: 0 auto;
+}
+
+/* nav 下的 ul 样式，使用 flex 布局并去除列表默认样式 */
+nav ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+}
+
+/* nav 下的 li 样式，设置左右间距和相对定位 */
+nav ul li {
+	margin: 0 20px;
+	position: relative;
+}
+
+/* 非最后一个 li 元素的伪元素样式，添加分隔线 */
+nav ul li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	right: -15px;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 60%;
+	width: 1px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* nav 下的 li 中 a 元素样式，设置文字颜色、去除下划线、加粗、内边距、圆角和过渡效果 */
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 8px 20px;
+	border-radius: 5px;
+	transition: all 0.3s;
+	display: block;
+}
+
+/* nav 下的 li 中 a 元素鼠标悬停样式，改变背景颜色并添加微动效 */
+nav ul li a:hover {
+	background-color: #1e63b0;
+	transform: translateY(-2px);
+}
+
+/* container 样式，设置最大宽度、居中、内边距、边框、圆角和阴影 */
+.container {
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 0  40px;
+	border: 1px solid #ccc;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* banner 样式，设置背景图片、尺寸、位置、文字颜色、对齐方式、内边距、高度并居中 */
+.banner {
+	background-image: url('../img/lang.jpg');
+	background-size: cover;
+	background-position: center;
+	color: white;
+	text-align: center;
+	padding: 80px 20px;
+	max-width: 950px;
+	margin: 0 auto;
+	height: 300px;
+}
+
+/* 排行榜容器样式，设置最大宽度、居中、内边距、圆角和阴影 */
+.rank-container {
+	background-color: #e9e9e9;
+	padding: 18px;
+	border-radius: 12px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	max-width: 950px;
+	margin: 20px auto;
+}
+
+/* 排行榜容器的标题样式，设置顶部外边距、字体大小、颜色、底部边框和过渡效果 */
+.rank-container h3 {
+	margin-top: 0;
+	font-size: 22px;
+	color: #2c3e50;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 10px;
+	transition: border-bottom 0.3s ease;
+}
+
+/* 排行榜项样式，设置弹性布局、底部外边距和过渡效果 */
+.rank-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	padding: 10px;
+	transition: transform 0.2s;
+}
+
+/* 排行榜项鼠标悬停时 p 元素样式，改变指针样式、文字颜色、大小并添加过渡效果 */
+.rank-item:hover p {
+	cursor: pointer;
+	color: #3498db;
+	transform: scale(1.2);
+	transition: color 0.3s, transform 0.2s;
+}
+
+/* 排行榜序号样式，设置宽高、背景颜色、文字颜色、弹性布局、圆角、右边距、字体大小和粗细 */
+.rank-number {
+	width: 28px;
+	height: 28px;
+	background-color: #3498db;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin-right: 15px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+/* 主内容区域样式，设置浮动和最大宽度 */
+main {
+	float: left;
+	max-width: 800px;
+	padding: 0;
+}
+
+/* fraud-types 样式，使用网格布局设置列数、间距和顶部外边距 */
+.fraud-types {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+	margin-top: 20px;
+}
+
+/* fraud-type 样式，设置背景颜色、内边距、左侧边框、圆角、文字颜色和过渡效果，设置指针样式 */
+.fraud-type {
+	background-color: #f8f9fa;
+	padding: 15px 20px;
+	border-left: 4px solid #1e63b0;
+	border-radius: 8px;
+	color: #333;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	cursor: pointer;
+}
+
+/* fraud-type 鼠标悬停样式，改变背景颜色、文字颜色，添加阴影和变换效果 */
+.fraud-type:hover {
+	background-color: #1e63b0;
+	color: white;
+	box-shadow: 0 6px 18px rgba(30, 99, 176, 0.2);
+	transform: scale(1.03) translateY(-3px);
+}
+
+/* footer 样式，设置背景颜色、文字颜色、文本对齐方式、内边距和顶部外边距 */
+footer {
+	background-color: #1e63b0;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+	margin-top: 20px;
+}
+
+/* warning 样式，设置文字颜色、字体大小、文本对齐方式、背景颜色、内边距、圆角、最大宽度、固定定位并居中 */
+.warning {
+	color: #666;
+	font-size: 14px;
+	text-align: center;
+	background-color: #f5f5f5;
+	padding: 12px;
+	border-radius: 4px;
+	max-width: 600px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+/* 去除所有链接的下划线 */
+a {
+	text-decoration: none;
+}
