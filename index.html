@@ -443,7 +443,7 @@
 				const user = JSON.parse(localStorage.getItem('user')); // 从 localStorage 读取
 
 				if (user && user.username === loginUsername && user.password === loginPassword) {
-					window.location.href = "1.index.html"; // 跳转至个人信息页面
+					window.location.href = "./1.首页.html"; // 跳转至个人信息页面
 				} else {
 					alert('用户名或密码错误，请先注册');
 				}
