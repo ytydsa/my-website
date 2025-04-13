@@ -1,81 +1,457 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>网络安全中心</title>
-		<!-- 外联CSS -->
-		<link rel="stylesheet" href="css/new_file.css">
 		<link rel="icon" href="favicon.ico">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 设置页面的标题 -->
+		<title>登录注册</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body,
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+				/* 设置背景颜色为浅灰色 */
+				background: #f8f8f8;
+				/* 固定背景，使其不随页面滚动而滚动 */
+				background-attachment: fixed;
+				/* 使用弹性布局，方便控制子元素排列 */
+				display: flex;
+				/* 主轴方向为垂直方向，子元素垂直排列 */
+				flex-direction: column;
+				/* 子元素在主轴上居中对齐 */
+				justify-content: center;
+				/* 子元素在交叉轴上居中对齐 */
+				align-items: center;
+				/* 高度占满整个视口 */
+				height: 100%;
+				/* 水平居中 */
+				margin: 0 auto;
+			}
+
+			/* 针对h1标题元素，设置标题样式 */
+			h1 {
+				/* 上下外边距为0.2rem */
+				margin: 0.2rem;
+				/* 字体大小为1.2rem */
+				font-size: 1.2rem;
+			}
+
+			/* 针对p段落元素，设置段落样式 */
+			p {
+				/* 字体大小为1rem */
+				font-size: 1rem;
+				/* 行高为1.5rem，控制段落内文字的垂直间距 */
+				line-height: 1.5rem;
+				/* 字体粗细为较细 */
+				font-weight: 100;
+				/* 上下外边距为1.2rem */
+				margin: 1.2rem 0;
+				/* 字母间距为0.1rem，控制文字间的水平间距 */
+				letter-spacing: 0.1rem;
+			}
+
+			/* 针对span元素，设置样式 */
+			span {
+				/* 字体大小为0.8rem */
+				font-size: 0.8rem;
+				/* 上下外边距为1.2rem */
+				margin: 1.2rem 0;
+			}
+
+			/* 针对类名为container的元素，设置容器样式 */
+			.container {
+				/* 相对定位，作为子元素绝对定位的参考 */
+				position: relative;
+				/* 背景颜色为白色 */
+				background: #fff;
+				/* 圆角边框，半径为10px */
+				border-radius: 10px;
+				/* 盒子阴影，增加立体感 */
+				box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+				/* 内边距为0.6rem */
+				padding: 0.6rem;
+				/* 宽度为50rem */
+				width: 50rem;
+				/* 高度为35rem */
+				height: 35rem;
+				/* 超出部分隐藏 */
+				overflow: hidden;
+				/* 最大宽度为视口宽度的100%，保证响应式 */
+				max-width: 100vw;
+				/* 最小高度为视口高度的70% */
+				min-height: 70vh;
+			}
+
+			/* 针对类名为form-container下的form元素，设置表单样式 */
+			.form-container form {
+				/* 背景颜色为白色 */
+				background: #fff;
+				/* 使用弹性布局 */
+				display: flex;
+				/* 主轴方向为垂直方向 */
+				flex-direction: column;
+				/* 左右内边距为1.8rem */
+				padding: 0 1.8rem;
+				/* 高度占满父容器 */
+				height: 100%;
+				/* 子元素在主轴和交叉轴上都居中对齐 */
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* 针对类名为social-container的元素，设置社交容器样式（虽然当前未使用，但保留注释） */
+			.social-container {
+				/* 上下外边距为0.6rem */
+				margin: 0.6rem 0;
+			}
+
+			/* 针对类名为social-container下的a元素，设置社交链接样式（虽然当前未使用，但保留注释） */
+			.social-container a {
+				/* 边框为1px浅灰色实线 */
+				border: 1px solid #eee;
+				/* 圆角边框，半径为50%（圆形） */
+				border-radius: 50%;
+				/* 使用弹性布局，内容居中 */
+				display: inline-flex;
+				/* 子元素在主轴和交叉轴上都居中对齐 */
+				justify-content: center;
+				align-items: center;
+				/* 左右外边距为5px */
+				margin: 0 5px;
+				/* 高度为1.8rem */
+				height: 1.8rem;
+				/* 宽度为1.8rem */
+				width: 1.8rem;
+			}
+
+			/* 针对类名为social-container下的a元素，鼠标悬停时的样式（虽然当前未使用，但保留注释） */
+			.social-container a:hover {
+				/* 透明度设置为0.8，鼠标悬停时半透明效果 */
+				opacity: 0.8;
+			}
+
+			/* 针对类名为form-container下的input元素，设置输入框样式 */
+			.form-container input {
+				/* 宽度为100%，占满父容器宽度 */
+				width: 100%;
+				/* 高度为2.2rem */
+				height: 2.2rem;
+				/* 文本缩进1rem，让输入内容与边框有间距 */
+				text-indent: 1rem;
+				/* 边框为1px浅灰色实线 */
+				border: 1px solid #ccc;
+				/* 去掉左边框、右边框、上边框，只保留底边框 */
+				border-left: none;
+				border-right: none;
+				border-top: none;
+				/* 去掉聚焦时的默认边框 */
+				outline: none;
+				/* 上下外边距为0.6rem */
+				margin: 0.6rem 0;
+			}
+
+			/* 针对类名为form-container下的button元素，被激活（点击）时的样式 */
+			.form-container button:active {
+				/* 缩小元素，缩放比例为0.95 */
+				transform: scale(0.95, 0.95);
+			}
+
+			/* 针对类名为form-container下的button元素，设置按钮样式 */
+			.form-container button {
+				/* 内边距上下0.4rem，左右1rem */
+				padding: 0.4rem 1rem;
+				/* 背景颜色为蓝色 */
+				background: #417dff;
+				/* 字体颜色为白色 */
+				color: white;
+				/* 边框为1px白色实线 */
+				border: 1px solid #fff;
+				/* 去掉聚焦时的边框 */
+				outline: none;
+				/* 鼠标指针变为手型，提示可点击 */
+				cursor: pointer;
+				/* 宽度为5rem */
+				width: 5rem;
+				/* 圆角边框，半径为8px */
+				border-radius: 8px;
+				/* 过渡效果，所有属性在100ms内线性变化 */
+				transition: all 100ms ease-in;
+				/* 上下外边距为0.6rem */
+				margin: 0.6rem 0;
+				/* 字体大小为0.6rem */
+				font-size: 0.6rem;
+				/* 上下内边距为0.5rem */
+				padding: 0.5rem 0;
+			}
+
+			/* 针对类名为ghost的按钮元素，设置透明背景按钮样式 */
+			button.ghost {
+				/* 背景透明 */
+				background: transparent;
+				/* 边框颜色为白色 */
+				border-color: #fff;
+				/* 边框为1px白色实线 */
+				border: 1px solid #fff;
+				/* 去掉聚焦时的边框 */
+				outline: none;
+				/* 鼠标指针变为手型，提示可点击 */
+				cursor: pointer;
+				/* 宽度为5rem */
+				width: 5rem;
+				/* 圆角边框，半径为8px */
+				border-radius: 8px;
+				/* 过渡效果，所有属性在800ms内线性变化 */
+				transition: all 800ms ease-in;
+				/* 上下外边距为0.6rem */
+				margin: 0.6rem 0;
+				/* 上下内边距为0.5rem */
+				padding: 0.5rem 0;
+				/* 字体颜色为白色 */
+				color: white;
+				/* 字体大小为0.6rem */
+				font-size: 0.6rem;
+			}
+
+			/* 针对类名为ghost的按钮元素，被激活（点击）时的样式 */
+			button.ghost:active {
+				/* 缩小元素，缩放比例为0.95 */
+				transform: scale(0.95, 0.95);
+			}
+
+			/* 针对类名为form-container的元素，设置绝对定位 */
+			.form-container {
+				/* 绝对定位，脱离文档流 */
+				position: absolute;
+				/* 顶部位置为0 */
+				top: 0;
+				/* 高度占满父容器 */
+				height: 100%;
+				/* 过渡效果，所有属性在0.5s内线性变化 */
+				transition: all 0.5s ease-in;
+			}
+
+			/* 针对类名为sing-in-container的元素，设置左侧登录容器样式 */
+			.sing-in-container {
+				/* 左边位置为0 */
+				left: 0;
+				/* 宽度为50% */
+				width: 50%;
+				/* 堆叠顺序为2，在上方显示 */
+				z-index: 2;
+			}
+
+			/* 针对类名为sign-up-container的元素，设置左侧注册容器样式 */
+			.sign-up-container {
+				/* 左边位置为0 */
+				left: 0;
+				/* 宽度为50% */
+				width: 50%;
+				/* 透明度为0，不可见 */
+				opacity: 0;
+				/* 堆叠顺序为1，在下方显示 */
+				z-index: 1;
+			}
+
+			/* 针对类名为overlay的元素，设置覆盖层样式 */
+			.overlay {
+				/* 背景颜色为蓝色 */
+				background: #417dff;
+				/* 宽度为200% */
+				width: 200%;
+				/* 高度为100% */
+				height: 100%;
+				/* 相对定位 */
+				position: relative;
+				/* 左边位置为-100%，初始在左侧外 */
+				left: -100%;
+				/* 过渡效果，所有属性在0.6s内线性变化 */
+				transition: all 0.6s ease-in-out;
+				/* 字体颜色为白色 */
+				color: white;
+			}
+
+			/* 针对类名为overlay-container的元素，设置覆盖层容器样式 */
+			.overlay-container {
+				/* 绝对定位，脱离文档流 */
+				position: absolute;
+				/* 顶部位置为0 */
+				top: 0;
+				/* 右边位置为0 */
+				right: 0;
+				/* 宽度为50% */
+				width: 50%;
+				/* 高度为100% */
+				height: 100%;
+				/* 超出部分隐藏 */
+				overflow: hidden;
+				/* 过渡效果，所有属性在0.6s内线性变化 */
+				transition: all 0.6s ease-in-out;
+				/* 堆叠顺序为99，在最上方显示 */
+				z-index: 99;
+			}
+
+			/* 针对类名为overlay-pannel的元素，设置覆盖层面板样式 */
+			.overlay-pannel {
+				/* 绝对定位，脱离文档流 */
+				position: absolute;
+				/* 顶部位置为0 */
+				top: 0;
+				/* 使用弹性布局 */
+				display: flex;
+				/* 主轴方向为垂直方向 */
+				flex-direction: column;
+				/* 子元素在主轴和交叉轴上都居中对齐 */
+				justify-content: center;
+				align-items: center;
+				/* 宽度为50% */
+				width: 50%;
+				/* 高度为100% */
+				height: 100%;
+				/* 左右内边距为2.2rem */
+				padding: 0 2.2rem;
+			}
+
+			/* 针对类名为overlay-right的元素，设置右侧覆盖层面板样式 */
+			.overlay-right {
+				/* 右边位置为0 */
+				right: 0;
+			}
+
+			/* 当类名为container的元素同时具有right-panel-active类时，类名为overlay-container的元素的样式 */
+			.container.right-panel-active .overlay-container {
+				/* 水平向左移动100% */
+				transform: translateX(-100%);
+			}
+
+			/* 当类名为container的元素同时具有right-panel-active类时，类名为sing-in-container的元素的样式 */
+			.container.right-panel-active .sing-in-container {
+				/* 水平向右移动100% */
+				transform: translateX(100%);
+			}
+
+			/* 当类名为container的元素同时具有right-panel-active类时，类名为sign-up-container的元素的样式 */
+			.container.right-panel-active .sign-up-container {
+				/* 水平向右移动100%，透明度设为1（可见），堆叠顺序为5 */
+				transform: translateX(100%);
+				opacity: 1;
+				z-index: 5;
+				/* 过渡效果，所有属性在0.6s内线性变化 */
+				transition: all 0.6s ease-in-out;
+			}
+
+			/* 当类名为container的元素同时具有right-panel-active类时，类名为overlay的元素的样式 */
+			.container.right-panel-active .overlay {
+				/* 水平向右移动50% */
+				transform: translateX(50%);
+			}
+
+			/* 当类名为container的元素同时具有right-panel-active类时，类名为overlay-left的元素的样式 */
+			.container.right-panel-active .overlay-left {
+				/* 水平移动0（即不变），过渡效果在0.6s内线性变化 */
+				transform: translateX(0);
+				transition: all 0.6s ease-in-out;
+			}
+
+			/* 当类名为container的元素同时具有right-panel-active类时，类名为overlay-right的元素的样式 */
+			.container.right-panel-active .overlay-right {
+				/* 水平向右移动20%，过渡效果在0.6s内线性变化 */
+				transform: translateX(20%);
+				transition: all 0.6s ease-in-out;
+			}
+		</style>
 	</head>
 	<body>
-		<header>
-			<h1>网络安全中心</h1>
-		</header>
-		<nav>
-			<ul>
-				<li><a href="#">首页</a></li>
-				<li><a href="./internet fraud.html">诈骗案例</a></li>
-				<li><a href="./avoid fraud.html">防骗技巧</a></li>
-				<li><a href="./informant center.html">举报中心</a></li>
-				<li><a href="#">提交文章</a></li>
-				<li><a href="#">个人信息</a></li>
-			</ul>
-		</nav>
-		<aside class="left-sidebar">
-			<div class="user-profile">
-				<img src="img/touxiaing.jpg" alt="用户头像" class="user-avatar">
-				<div class="user-info">
-					<h3 class="user-name">网安小卫士</h3>
-					<p class="user-article-count">发布文章数量：88 篇</p>
-					<p class="user-site-duration">在站时长：3 年</p>
-					<p class="user-qq-email">QQ 邮箱：123456789@qq.com</p>
+		<div class="container" id="container">
+			<!-- 注册表单容器 -->
+			<div class="form-container sign-up-container">
+				<form action="#" id="registerForm">
+					<h1>用户注册</h1>
+					<input type="text" placeholder="用户名" id="regUsername">
+					<input type="password" placeholder="密码" id="regPassword">
+					<input type="email" placeholder="邮箱" id="regEmail"> <!-- 新增邮箱字段 -->
+					<input type="date" placeholder="生日" id="regBirthday"> <!-- 新增生日字段 -->
+					<button type="submit">注册</button>
+					<button type="reset">重置</button> <!-- 新增重置按钮 -->
+				</form>
+			</div>
+			<!-- 登录表单容器 -->
+			<div class="form-container sing-in-container">
+				<form action="#" id="loginForm">
+					<h1>用户登录</h1>
+					<input type="text" placeholder="用户名" id="loginUsername">
+					<input type="password" placeholder="密码" id="loginPassword">
+					<button type="submit">登录</button>
+					<button type="reset">重置</button> <!-- 新增重置按钮 -->
+				</form>
+			</div>
+			<!-- 侧边栏容器 -->
+			<div class="overlay-container">
+				<div class="overlay">
+					<div class="overlay-pannel overlay-left">
+						<h1>已有账号?</h1>
+						<p>亲爱的快快点我去进行登录吧。</p>
+						<button class="ghost" id="signIn">登录</button>
+					</div>
+					<div class="overlay-pannel overlay-right">
+						<h1>没有帐号？</h1>
+						<p>点击注册去注册一个属于你的账号吧。</p>
+						<button class="ghost" id="signUp">注册</button>
+					</div>
 				</div>
 			</div>
-		</aside>
-		<main>
-			<div class="banner">
-				<h1>提及转账就是诈骗</h1>
-				<h2>预警如阻别忽视，财产安全要重视</h2>
-			</div>
-			<div class="container">
-				<h2>常见的诈骗分类：</h2>
-				<p>2024常见诈骗等级类型分布</p>-
-				<div class="fraud-types">
-					<a href="银行诈骗.html"><div class="fraud-type">1. 银行诈骗</div></a>
-					<a href="理财诈骗.html"><div class="fraud-type">2. 理财诈骗</div></a>
-					<a href="电信诈骗.html"><div class="fraud-type">3. 电信诈骗</div></a>
-					<a href="虚假投资理财诈骗.html"><div class="fraud-type">4. 虚假投资理财诈骗</div></a> <!-- 原投资诈骗，与排行榜表述对齐 -->
-					<a href="健康诈骗.html"><div class="fraud-type">5. 健康诈骗</div></a> 
-					<a href="经营诈骗.html"><div class="fraud-type">6. 经营诈骗</div></a>
-					<a href="冒充公检法诈骗.html"><div class="fraud-type">7. 冒充公检法诈骗</div></a> <!-- 原公安诈骗，更准确规范 -->
-					<a href="保险诈骗.html"><div class="fraud-type">8. 保险诈骗</div></a>
-					<a href="网络钓鱼诈骗.html"><div class="fraud-type">9. 网络钓鱼诈骗</div></a> <!-- 补充排行榜有的类型 -->
-				</div>
-				<div class="warning">
-					增强网络安全意识，提升防范诈骗能力
-				</div>
-			</div>
-		</main>
-		<aside class="right-sidebar">
-			<div class="rank-container">
-				<h3>全国网络安全案件排行榜</h3>
-				<div class="rank-item"><span class="rank-number">1</span>
-					<p>中奖诈骗</p>
-				</div>
-				<div class="rank-item"><span class="rank-number">2</span>
-					<p>网络赌博</p>
-				</div>
-				<div class="rank-item"><span class="rank-number">3</span>
-					<p>网络钓鱼诈骗</p>
-				</div>
-				<div class="rank-item"><span class="rank-number">4</span>
-					<p>虚假投资理财诈骗</p>
-				</div>
-				<div class="rank-item"><span class="rank-number">5</span>
-					<p>冒充公检法诈骗</p>
-				</div>
-			</div>
-		</aside>
+		</div>
+		<script>
+			const container = document.querySelector('#container');
+			const signInButton = document.querySelector('#signIn');
+			const signUpButton = document.querySelector('#signUp');
+			const loginForm = document.getElementById('loginForm');
+			const registerForm = document.getElementById('registerForm');
+
+			// 注册表单提交事件（修改：存储到 localStorage）
+			registerForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const regUsername = document.getElementById('regUsername').value.trim();
+				const regPassword = document.getElementById('regPassword').value.trim();
+				const regEmail = document.getElementById('regEmail').value.trim(); // 新增邮箱
+				const regBirthday = document.getElementById('regBirthday').value.trim(); // 新增生日
+
+				if (regUsername && regPassword && regEmail && regBirthday) {
+					// 存储用户信息到 localStorage（包含更多字段）
+					localStorage.setItem('user', JSON.stringify({
+						username: regUsername,
+						password: regPassword,
+						email: regEmail,
+						birthday: regBirthday
+					}));
+					alert('注册成功！请登录');
+				} else {
+					alert('请填写完整注册信息（用户名、密码、邮箱、生日）');
+				}
+			});
+
+			// 登录表单提交事件（修改：跳转至个人信息页面）
+			loginForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const loginUsername = document.getElementById('loginUsername').value.trim();
+				const loginPassword = document.getElementById('loginPassword').value.trim();
+				const user = JSON.parse(localStorage.getItem('user')); // 从 localStorage 读取
+
+				if (user && user.username === loginUsername && user.password === loginPassword) {
+					window.location.href = "1.index.html"; // 跳转至个人信息页面
+				} else {
+					alert('用户名或密码错误，请先注册');
+				}
+			});
+
+			// 页面切换逻辑保持不变
+			signUpButton.addEventListener('click', () => container.classList.add('right-panel-active'));
+			signInButton.addEventListener('click', () => container.classList.remove('right-panel-active'));
+		</script>
 	</body>
 </html>
